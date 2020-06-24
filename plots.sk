@@ -1,0 +1,31 @@
+command /terrain:
+	trigger:
+		wait 2 ticks
+		open chest with 1 rows named "Acheter un terrain" to player
+		format slot 1 of player with paper named "&6&lVoir la liste des terrains" with lore "&7&o(Terrains disponibles)" to run [make player execute command "setpos"]
+		format slot 4 of player with red clay named "&6&lVoir un terrain de 15x15" with lore "&7&o(Terrain de démonstration)" to run [make player execute command "setpos"]
+		format slot 7 of player with paper named "&6&lVoir la liste des terrains" with lore "&7&o(Terrains disponibles)" to run [make player execute command "setpos"]
+
+
+
+command /setpos:
+   trigger:
+      set {playerpos} to player's location
+      set block at location at -45, 77, 541 in world "world" to glass
+      set block at location at -45, 77, 540 in world "world" to glass
+      set block at location at -46, 77, 541 in world "world" to glass
+      set block at location at -46, 77, 540 in world "world" to glass
+      teleport player to location -43.886, 78, 540.989
+      send "&f&l[&6&lInterCraft&f&l]&4&o Voici un terrain de 15x15, tu peut en acheter un pour 1000k" to player
+      wait 3000 ticks
+      #set block at location at -45, 77, 541 in world "world" to air
+
+
+
+command /terrainsdispos:
+	trigger:
+		wait 2 ticks
+		open chest with 1 rows named "Terrains disponibles" to player
+		format slot 1 of player with paper named "&6&lVoir la liste des terrains" with lore "&7&o(Terrains disponibles)" to run [make player execute command "setpos"]
+		format slot 4 of player with red clay named "&6&lVoir un terrain de 15x15" with lore "&7&o(Terrain de démonstration)" to run [make player execute command "setpos"]
+		format slot 7 of player with paper named "&6&lVoir la liste des terrains" with lore "&7&o(Terrains disponibles)" to run [make player execute command "setpos"]
